@@ -2,7 +2,7 @@ body {
     margin-top: 30px;
 }
 
-#matrix {
+#matrix, #matrix-a, #matrix-b {
     border-style: dashed;
     margin-top: 3rem;
     padding: 10px;

@@ -9,6 +9,33 @@
         }
     }
 
+    echo "<canvas width='200' height='200' id='draw'>";
+    echo "</canvas>";
+
+    echo "<script>
+    let d = document.getElementById('draw');
+    let width = d.width;
+    let canva = d.getContext('2d');
+
+    var border_color = '#333';
+
+    drawLine(border_color, 1, 1, 1, 199);
+    drawLine(border_color, 199, 1, 170, 1);
+    drawLine(border_color, 1, 199, 30, 199);
+    drawLine(border_color, 1, 1, 30, 1);
+    drawLine(border_color, 199, 199, 170, 199)
+    drawLine(border_color, 199, 199, 199, 1);
+
+    function drawLine(color, xi, yi, xf, yf) {
+        canva.beginPath();
+        canva.strokeStyle = color;
+        canva.moveTo(xi, yi);
+        canva.lineTo(xf, yf);
+        canva.stroke();
+        canva.closePath();
+    }";
+    echo "</script>";
+
     echo "<style>
                 body {
                     display: grid;

@@ -3,7 +3,7 @@
     for ($j = 1; $j < $_POST["columns"] + 1; $j++) {
         echo "<tr>";
         for ($i = 1; $i < $_POST["files"] + 1; $i++) {
-            echo "<td>";
+            echo "<td style='text-align: right'>";
             echo $_POST["a" . $i . $j] . " ";
             echo "</td>";
         }
@@ -20,8 +20,8 @@
     <title>Transponer de Matriz - juandavid.dev</title>
 </head>
 <body>
-
 <div class="container">
+    <h1>Transponer de Matriz</h1>
     <form method="post">
         <div class="form-group">
             <label for="files">Filas</label>

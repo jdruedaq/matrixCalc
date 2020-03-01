@@ -1,24 +1,29 @@
 <?php if (isset($_POST["files"]) && isset($_POST["columns"]) && isset($_POST["x"]) && isset($_POST["checker"])) {
 
     for ($i = 1; $i < $_POST["files"] + 1; $i++) {
+        echo "<div class='grid-wrapper'>";
         for ($j = 1; $j < $_POST["columns"] + 1; $j++) {
             echo "<div class='grid-layout'>
-                    <div class='xxx'>";
+                    <div class='organize'>";
             echo $_POST["x"] * $_POST["a" . $i . $j] . " ";
             echo "</div></div>";
         }
+        echo "</div>";
         echo "<br>";
     }
 
     echo "<style>
-                
-                .xxx {
+                .grid-wrapper {
+                    border-left: 1px solid #333;
+                    border-right: 1px solid #333;
+                }
+
+                body {
                     display: grid;
                     grid-template-columns: repeat(" . $_POST["columns"] . ", auto); 
-                    
-                    align-items: stretch;
-                    justify-content: stretch;
-                }                    
+                    grid-gap: 5px;
+                }
+                     
 </style>";
     die();
 }
@@ -41,7 +46,7 @@
             } ?>">
         </div>
         <div class="form-group">
-            <label for="columns">X</label>
+            <label for="columns">Columnas</label>
             <input id="columns" name="columns" type="number" class="form-control"
                    value="<? if (isset($_POST['columns'])) {
                        echo $_POST['columns'];

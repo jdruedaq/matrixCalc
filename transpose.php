@@ -17,11 +17,11 @@
 <html lang="es">
 <head>
     <? require_once("includes/head_tags.php"); ?>
-    <title>Transponer de Matriz - juandavid.dev</title>
+    <title>Transponer Matriz - juandavid.dev</title>
 </head>
 <body>
 <div class="container">
-    <h1>Transponer de Matriz</h1>
+    <h1>Transponer Matriz</h1>
     <form method="post">
         <div class="form-group">
             <label for="files">Filas</label>

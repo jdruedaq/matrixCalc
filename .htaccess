@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^sumar$ sum.php [QSA]
+RewriteRule ^restar$ subtraction.php [QSA]
+RewriteRule ^multiplicar$ multiply.php [QSA]
+RewriteRule ^multiplicar_un_escalar$ multiply_one_scalar.php [QSA]
+RewriteRule ^transponer$ transpose.php [QSA]
+
+Options -Indexes

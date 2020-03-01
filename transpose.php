@@ -55,6 +55,7 @@
             <button type="submit" class="btn btn-primary">Siguiente</button>
         </div>
     </form>
+    <a class="btn btn-outline-primary" href="">Borrar</a>
 </div>
 </body>
 </html>

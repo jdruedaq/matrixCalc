@@ -2,8 +2,8 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
-RewriteRule ^sumar$ sum.php [QSA]
-RewriteRule ^restar$ subtraction.php [QSA]
+RewriteRule ^restar$ sum.php?suma=1 [QSA]
+RewriteRule ^sumar$ sum.php?suma=0 [QSA]
 RewriteRule ^multiplicar$ multiply.php [QSA]
 RewriteRule ^multiplicar_un_escalar$ multiply_one_scalar.php [QSA]
 RewriteRule ^transponer$ transpose.php [QSA]

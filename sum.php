@@ -1,10 +1,35 @@
-<?php if (isset($_POST["files-columns"]) && isset($_POST["checker"])) {
+<?php
+$operator = 0;
+$title = "";
+if ($_SERVER['REQUEST_URI'] == "/sumar") {
+    $operator = 1;                          // In sum case
+    $title = "Suma";
+} elseif ($_SERVER['REQUEST_URI'] == "/restar") {
+    $operator = -1;                          // In subtraction case
+    $title = "Resta";
+} else {
+    http_response_code(400);
+    die("Invalid Request");
+}
+if (isset($_POST["files-columns"]) && isset($_POST["checker"])) {
+    echo "<div class='grid-wrapper'>";
     for ($i = 1; $i < $_POST["files-columns"] + 1; $i++) {
         for ($j = 1; $j < $_POST["files-columns"] + 1; $j++) {
-            echo $_POST["a" . $i . $j] + $_POST["b" . $i . $j];
+            echo "<div class='grid-layout'>
+                    <div class='organize'>";
+            echo $_POST["a" . $i . $j] + ($operator * $_POST["b" . $i . $j]);
+            echo "</div></div>";
         }
-        echo "<br>";
     }
+    echo "</div>";
+
+    echo "<style>
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: repeat(" . $_POST["files-columns"] . ", 4vw); 
+                    grid-gap: 5px;
+                }
+           </style>";
     die();
 } ?>
 
@@ -12,11 +37,11 @@
 <html lang="es">
 <head>
     <? require_once("includes/head_tags.php"); ?>
-    <title>Suma de Matrices - juandavid.dev</title>
+    <title><? echo $title; ?> de Matrices - juandavid.dev</title>
 </head>
 <body>
 <div class="container">
-    <h1>Suma de Matrices</h1>
+    <h1><? echo $title; ?> de Matrices</h1>
     <form method="post">
         <div class="form-group">
             <label for="files-columns">Filas y Columnas</label>

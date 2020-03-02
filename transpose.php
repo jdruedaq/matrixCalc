@@ -1,15 +1,22 @@
 <?php if (isset($_POST["files"]) && isset($_POST["columns"]) && isset($_POST["checker"])) {
-    echo "<table>";
+    echo "<div class='grid-wrapper'>";
     for ($j = 1; $j < $_POST["columns"] + 1; $j++) {
-        echo "<tr>";
         for ($i = 1; $i < $_POST["files"] + 1; $i++) {
-            echo "<td style='text-align: right'>";
+            echo "<div class='grid-layout'>
+                    <div class='organize'>";
             echo $_POST["a" . $i . $j] . " ";
-            echo "</td>";
+            echo "</div></div>";
         }
-        echo "</tr>";
     }
-    echo "</table>";
+    echo "</div>";
+
+    echo "<style>
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: repeat(" . $_POST["files"] . ", 4vw); 
+                    grid-gap: 5px;
+                }
+           </style>";
     die();
 } ?>
 

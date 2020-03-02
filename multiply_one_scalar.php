@@ -1,5 +1,5 @@
 <?php if (isset($_POST["files"]) && isset($_POST["columns"]) && isset($_POST["x"]) && isset($_POST["checker"])) {
-
+    echo "<div class='grid-wrapper'>";
     for ($i = 1; $i < $_POST["files"] + 1; $i++) {
         for ($j = 1; $j < $_POST["columns"] + 1; $j++) {
             echo "<div class='grid-layout'>
@@ -8,42 +8,15 @@
             echo "</div></div>";
         }
     }
-
-    echo "<canvas width='200' height='200' id='draw'>";
-    echo "</canvas>";
-
-    echo "<script>
-    let d = document.getElementById('draw');
-    let width = d.width;
-    let canva = d.getContext('2d');
-
-    var border_color = '#333';
-
-    drawLine(border_color, 1, 1, 1, 199);
-    drawLine(border_color, 199, 1, 170, 1);
-    drawLine(border_color, 1, 199, 30, 199);
-    drawLine(border_color, 1, 1, 30, 1);
-    drawLine(border_color, 199, 199, 170, 199)
-    drawLine(border_color, 199, 199, 199, 1);
-
-    function drawLine(color, xi, yi, xf, yf) {
-        canva.beginPath();
-        canva.strokeStyle = color;
-        canva.moveTo(xi, yi);
-        canva.lineTo(xf, yf);
-        canva.stroke();
-        canva.closePath();
-    }";
-    echo "</script>";
+    echo "</div>";
 
     echo "<style>
-                body {
+                .grid-wrapper {
                     display: grid;
                     grid-template-columns: repeat(" . $_POST["columns"] . ", 4vw); 
                     grid-gap: 5px;
                 }
-                     
-</style>";
+           </style>";
     die();
 }
 ?>
@@ -56,7 +29,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Multiplicación de Matrices</h1>
+    <h1>Multiplicación por un escaar</h1>
     <form method="post">
         <div class="form-group">
             <label for="files">Filas</label>

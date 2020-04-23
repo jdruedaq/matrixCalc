@@ -11,6 +11,7 @@
     <a class="btn btn-outline-primary" href="multiplicar">Multiplicación</a>
     <a class="btn btn-outline-primary" href="multiplicar_un_escalar">Multiplicación por un escalar</a>
     <a class="btn btn-outline-primary" href="transponer">Transponer</a>
+    <a class="btn btn-outline-primary" href="transponer">Resolver</a>
 </div>
 </body>
 </html>

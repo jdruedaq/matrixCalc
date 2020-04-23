@@ -7,5 +7,6 @@ RewriteRule ^sumar$ sum.php?suma=0 [QSA]
 RewriteRule ^multiplicar$ multiply.php [QSA]
 RewriteRule ^multiplicar_un_escalar$ multiply_one_scalar.php [QSA]
 RewriteRule ^transponer$ transpose.php [QSA]
+RewriteRule ^resolver$ resolve.php [QSA]
 
 Options -Indexes

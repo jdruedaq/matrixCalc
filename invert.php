@@ -72,8 +72,10 @@ if (isset($_POST["size"]) && isset($_POST["checker"])) {
             $_POST["b" . $i . $j] = pow(-1, $i + $j) * ($position["1"] * $position["4"] - $position["2"] * $position["3"]);
             echo "<script>console.log('a$i$j = -1^$i + $j * " . $position["1"] . " * " . $position["4"] . " - " . $position["2"] . " * " . $position["3"] . "')</script>";
             echo "<script>console.log('------------------------------------------------------------------')</script>";
-            $f = new Math_Fraction($_POST["b" . $i . $j], $determinante);
-            echo $f->toString();
+            if ($determinante != 0) {
+                $f = new Math_Fraction($_POST["b" . $i . $j], $determinante);
+                echo $f->toString();
+            }
             echo "</div></div>";
         }
     }
